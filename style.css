@@ -1,0 +1,257 @@
+*{
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+
+
+img{
+    margin: 0;
+}
+
+.images{
+    max-width: 100%;
+}
+/* header */
+
+.logo {
+    max-width: 100%;
+    grid-area: logo;
+    margin: .5em;
+}
+
+.home,
+.about {
+    font-weight: 600;
+    letter-spacing: 3;
+    margin-top: .88em;
+}
+
+.home {
+    grid-area: home;
+}
+
+.about{
+    grid-area: about;
+}
+
+header {
+    display: flex;
+    gap: 1.8em;
+    grid-area: head;
+}
+
+/* intro section */
+
+.display-pic {
+    width: 162px;
+    border-radius: 50%;
+    margin-top: .6em;
+}
+
+/* typography */
+
+h1 {
+    font-size: 2 rem;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 0.3em;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h4 {
+   font-size: 1.8rem; 
+   margin: 0.2em 0 ;
+}
+
+p{
+    font-size: .9em;
+    margin-top: 0%;
+}
+
+.recent-posts {
+    text-align: center;
+}
+
+time {
+    font-size: .9em;
+    display: block;
+    margin-top: .5em;
+}
+
+/* footer */
+
+footer {
+    grid-area: foot;
+    width: 100%;
+    background-color: #202020;
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+}
+
+footer p {
+    margin: 0;
+    color: #ECECEC;
+    font-size: .75rem;
+    font-weight: 600;
+}
+
+small {
+    color: #D7D7D7;
+}
+.yap {
+    display: none;
+}
+
+/* layout */
+.intro,
+.main,
+.blogs {
+    display: grid;
+}
+
+.intro {
+    grid-area: intr;
+    grid-template-columns: 1fr;
+}
+
+main {
+    grid-area: main;
+    grid-template-columns: 1fr;
+}
+.blogs {
+    grid-area: blog;
+    grid-template-columns: 1fr;
+}
+
+ body {
+    display: grid;
+    grid-template-columns: 1em 1fr 1em ;
+    grid-template-areas: 
+    ".... .... ...."
+    "head head head"
+    ".... intr ...."
+    ".... main ...."
+    ".... blog ...."
+    "foot foot foot"
+    ".... .... ...."
+    ;
+} 
+
+@media (min-width:870px) {
+    header{
+        display: grid;
+        grid-template-columns: repeat(12 1fr);
+        grid-template-areas: 
+        "logo . . . . . . . . . . home about";
+    }
+    .home,
+    .about {
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    
+    .display-pic {
+        grid-area: disp;
+        width: 200px;
+    }
+    .welcome {
+        grid-area: welc;
+        margin: 0%;
+    }
+    .yap {
+        display: block;
+        margin-top: 0%;
+        grid-area: yaps;
+    }
+    
+    .intro{
+        display: grid;
+        grid-template-columns: repeat(4,) ;
+        grid-template-areas: 
+        "disp disp .... ...."
+        "disp disp welc ...."
+        "disp disp yaps ...."
+        ".... .... .... ....";
+        gap: 1em;
+    }
+    .hero{
+        display: none;
+    }
+    .first-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 100%;
+        height: 550px;
+        background-image: url("images/article-image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .white{
+        color: white;
+        margin: 0;
+    }
+    
+    .journey {
+        grid-area: jour;
+        font-size: 3rem;
+        padding: .3em 0 0 1.2em;
+    }
+    
+    .text{
+        font-size: 1.25rem;
+        padding: 1em 0 4em 3em;
+    }
+    
+    p span{
+        display: block;
+    }
+    
+    .hero-date{
+        grid-area: date;
+        font-size: 1.4rem;
+        padding: .7em 0 0 2.5em ;
+    }
+    
+    
+    .blogs-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1em;
+    }
+    
+    h1 {
+    font-size: 3rem;
+    }
+    
+    h3{
+        font-size: 1.5rem;
+    }
+    
+    p{
+        font-size: 1.25rem;
+    }
+    
+    time{
+     font-size: 1.2rem;
+    }
+    footer p,
+    small {
+        font-size: 1rem;
+    }
+    
+}
